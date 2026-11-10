@@ -1,9 +1,11 @@
-﻿namespace GabrielBookWeb.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GabrielBookWeb.Models
 {
     public class Category
     {
-        public int Id { get; set; }
+        [Key]
+        public int CategoryId { get; set; }
         public string Name { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
     }
 }
