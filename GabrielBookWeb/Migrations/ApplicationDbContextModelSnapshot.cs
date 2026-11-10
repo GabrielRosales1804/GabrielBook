@@ -36,6 +36,23 @@ namespace GabrielBookWeb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Fiction"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Action"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Sci-Fi"
+                        });
                 });
 #pragma warning restore 612, 618
         }

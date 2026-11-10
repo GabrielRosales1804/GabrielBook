@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GabrielBookWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20261110011614_UpdateIdInCategory")]
-    partial class UpdateIdInCategory
+    [Migration("20261110012940_SeedCategoryTable")]
+    partial class SeedCategoryTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,23 @@ namespace GabrielBookWeb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Fiction"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Action"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Sci-Fi"
+                        });
                 });
 #pragma warning restore 612, 618
         }
