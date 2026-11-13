@@ -15,17 +15,20 @@ namespace GabrielBookWeb.Data
                 new Models.Category
                 {
                     Id = 1,
-                    Name = "Fiction"
+                    Name = "Fiction",
+                    DisplayOrder = 1
                 },
                 new Models.Category
                 {
                     Id = 2,
-                    Name = "Action"
+                    Name = "Action",
+                    DisplayOrder = 2
                 },
                 new Models.Category
                 {
                     Id = 3,
-                    Name = "Sci-Fi"
+                    Name = "Sci-Fi",
+                    DisplayOrder = 3
                 }
             );
         }
