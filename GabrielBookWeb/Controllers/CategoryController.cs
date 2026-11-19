@@ -1,5 +1,8 @@
-﻿using GabrielBookWeb.Data;
+﻿using Azure.Messaging;
+using GabrielBookWeb.Data;
+using GabrielBookWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client.NativeInterop;
 
 namespace GabrielBookWeb.Controllers
 {
@@ -10,7 +13,7 @@ namespace GabrielBookWeb.Controllers
         public CategoryController(ApplicationDbContext context)
         {
             _context = context;
-        }   
+        }
         public IActionResult Index()
         {
             var categories = _context.Categories.ToList();
@@ -19,6 +22,15 @@ namespace GabrielBookWeb.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ActionName("Create")]
+        public IActionResult CreatePOST(Category category)
+        {
+            _context.Categories.Add(category);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
