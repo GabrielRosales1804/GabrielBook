@@ -61,14 +61,14 @@ namespace GabrielBookWeb.Controllers
         [ActionName("Update")]
         public IActionResult UpdatePOST(Category category)
         {
-            if (!String.IsNullOrEmpty(category.Name) && _context.Categories.Any(c => c.Name.ToLower() == category.Name.ToLower()))
+            if (!String.IsNullOrEmpty(category.Name) && _context.Categories.Any(c => c.Name.ToLower() == category.Name.ToLower() && c.Id != category.Id))
             {
                 ModelState.AddModelError("", "Category name already exists!");
             }
 
             if (ModelState.IsValid)
             {
-                _context.Categories.Add(category);
+                _context.Categories.Update(category);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
