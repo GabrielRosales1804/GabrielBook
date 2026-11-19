@@ -25,6 +25,7 @@ namespace GabrielBookWeb.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [ActionName("Create")]
         public IActionResult CreatePOST(Category category)
         {
