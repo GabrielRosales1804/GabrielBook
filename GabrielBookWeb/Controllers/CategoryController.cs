@@ -14,7 +14,11 @@ namespace GabrielBookWeb.Controllers
         public IActionResult Index()
         {
             var categories = _context.Categories.ToList();
-            return View("Index", categories);
+            return View(categories);
+        }
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
