@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GabrielBook.Business.Services
 {
-    public class CategoryServices : ICategoryServices
+    public class CategoryService : ICategoryService
     {
         public Task CreateCategoryAsync(Category category)
         {

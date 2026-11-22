@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GabrielBook.Business.Services.IServices
 {
-    public interface ICategoryServices
+    public interface ICategoryService
     {
         Task<Category?> GetAllCategoriesByIdAsync(int id);
         Task<IEnumerable<Category>> GetAllCategoriesAsync();
