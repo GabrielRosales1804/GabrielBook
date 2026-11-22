@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GabrielBookWeb.Migrations
+namespace GabrielBook.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddValidationDisplayOrder : Migration

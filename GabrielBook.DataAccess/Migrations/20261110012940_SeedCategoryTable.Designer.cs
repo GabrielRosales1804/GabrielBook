@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GabrielBookWeb.Migrations
+namespace GabrielBook.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20261113061109_AddDisplayOrderToCategory")]
-    partial class AddDisplayOrderToCategory
+    [Migration("20261110012940_SeedCategoryTable")]
+    partial class SeedCategoryTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,16 +24,13 @@ namespace GabrielBookWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("GabrielBookWeb.Models.Category", b =>
+            modelBuilder.Entity("GabrielBook.Models;.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -47,19 +44,16 @@ namespace GabrielBookWeb.Migrations
                         new
                         {
                             Id = 1,
-                            DisplayOrder = 0,
                             Name = "Fiction"
                         },
                         new
                         {
                             Id = 2,
-                            DisplayOrder = 0,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 3,
-                            DisplayOrder = 0,
                             Name = "Sci-Fi"
                         });
                 });

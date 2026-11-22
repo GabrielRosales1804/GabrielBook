@@ -3,19 +3,16 @@ using GabrielBookWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GabrielBookWeb.Migrations
+namespace GabrielBook.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20261110012940_SeedCategoryTable")]
-    partial class SeedCategoryTable
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +21,7 @@ namespace GabrielBookWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("GabrielBookWeb.Models.Category", b =>
+            modelBuilder.Entity("GabrielBook.Models;.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,9 +29,13 @@ namespace GabrielBookWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("DisplayOrder")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -44,16 +45,19 @@ namespace GabrielBookWeb.Migrations
                         new
                         {
                             Id = 1,
+                            DisplayOrder = 1,
                             Name = "Fiction"
                         },
                         new
                         {
                             Id = 2,
+                            DisplayOrder = 2,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 3,
+                            DisplayOrder = 3,
                             Name = "Sci-Fi"
                         });
                 });

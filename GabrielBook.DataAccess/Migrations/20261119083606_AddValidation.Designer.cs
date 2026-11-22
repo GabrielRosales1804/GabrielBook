@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GabrielBookWeb.Migrations
+namespace GabrielBook.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20261119083606_AddValidation")]
@@ -24,7 +24,7 @@ namespace GabrielBookWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("GabrielBookWeb.Models.Category", b =>
+            modelBuilder.Entity("GabrielBook.Models;.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

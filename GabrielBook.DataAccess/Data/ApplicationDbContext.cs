@@ -1,30 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GabrielBook.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GabrielBookWeb.Data
 {
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
-        public DbSet<Models.Category> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Models.Category>().HasData(
-                new Models.Category
+            modelBuilder.Entity<Category>().HasData(
+                new Category
                 {
                     Id = 1,
                     Name = "Fiction",
                     DisplayOrder = 1
                 },
-                new Models.Category
+                new Category
                 {
                     Id = 2,
                     Name = "Action",
                     DisplayOrder = 2
                 },
-                new Models.Category
+                new Category
                 {
                     Id = 3,
                     Name = "Sci-Fi",

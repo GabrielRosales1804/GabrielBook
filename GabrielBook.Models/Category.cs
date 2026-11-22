@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GabrielBookWeb.Models
+namespace GabrielBook.Models
 {
     public class Category
     {

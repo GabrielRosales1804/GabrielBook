@@ -1,6 +1,6 @@
 ﻿using Azure.Messaging;
 using GabrielBookWeb.Data;
-using GabrielBookWeb.Models;
+using GabrielBook.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client.NativeInterop;
 

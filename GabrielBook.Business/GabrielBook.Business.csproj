@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GabrielBook.DataAccess\GabrielBook.DataAccess.csproj" />
+    <ProjectReference Include="..\GabrielBook.Models\GabrielBook.Models.csproj" />
+    <ProjectReference Include="..\GabrielBook.Utility\GabrielBook.Utility.csproj" />
+  </ItemGroup>
+
 </Project>
