@@ -1,3 +1,7 @@
 <Solution>
+  <Project Path="GabrielBook.Business/GabrielBook.Business.csproj" Id="dc4b5efb-e570-41c6-9dc4-e3928f4e364f" />
+  <Project Path="GabrielBook.DataAccess/GabrielBook.DataAccess.csproj" Id="b33f2971-2a99-4e2a-a22b-33df20d2b1f8" />
+  <Project Path="GabrielBook.Models/GabrielBook.Models.csproj" Id="e73707d7-7e03-4809-a6ff-acec9a3ba34a" />
+  <Project Path="GabrielBook.Utility/GabrielBook.Utility.csproj" Id="e2d8ea2a-97bf-4b49-ada9-aa1f1c75104e" />
   <Project Path="GabrielBookWeb/GabrielBookWeb.csproj" />
 </Solution>
