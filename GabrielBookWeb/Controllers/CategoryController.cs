@@ -30,7 +30,7 @@ namespace GabrielBookWeb.Controllers
         [ActionName("Create")]
         public async Task<IActionResult> CreatePOST(Category category)
         {
-            if (!String.IsNullOrEmpty(category.Name) && await _categoryService.IsCategoryNameUniqueAsync(category.Name))
+            if (!String.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name))
             {
                 ModelState.AddModelError("", "Category name already exists!");
             }
@@ -62,7 +62,7 @@ namespace GabrielBookWeb.Controllers
         [ActionName("Update")]
         public async Task<IActionResult> UpdatePOST(Category category)
         {
-            if (!String.IsNullOrEmpty(category.Name) && await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
+            if (!String.IsNullOrEmpty(category.Name) && !await _categoryService.IsCategoryNameUniqueAsync(category.Name, category.Id))
             {
                 ModelState.AddModelError("", "Category name already exists!");
             }
