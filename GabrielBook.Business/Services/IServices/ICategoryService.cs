@@ -7,10 +7,10 @@ namespace GabrielBook.Business.Services.IServices
 {
     public interface ICategoryService
     {
-        Task<Category?> GetAllCategoriesByIdAsync(int id);
         Task<IEnumerable<Category>> GetAllCategoriesAsync();
-        Task<Category> GetCategoryByIdAsync(int id);
-        Task CreateCategoryAsync(Category category);
+        Task<Category?> GetAllCategoriesByIdAsync(int id);
+        Task<Category> CreateCategoryAsync(Category category);
+        Task DeleteCategoryAsync(int id);
         Task UpdateCategoryAsync(Category category);
     }
 }

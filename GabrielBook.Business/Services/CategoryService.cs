@@ -1,5 +1,7 @@
 ﻿using GabrielBook.Business.Services.IServices;
 using GabrielBook.Models;
+using GabrielBookWeb.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,29 +10,44 @@ namespace GabrielBook.Business.Services
 {
     public class CategoryService : ICategoryService
     {
-        public Task CreateCategoryAsync(Category category)
+        private readonly ApplicationDbContext _context;
+
+        public CategoryService(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<IEnumerable<Category>> GetAllCategoriesAsync()
+        public async Task<IEnumerable<Category>> GetAllCategoriesAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Categories.ToListAsync();
         }
 
-        public Task<Category?> GetAllCategoriesByIdAsync(int id)
+        public async Task<Category?> GetAllCategoriesByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Categories.FindAsync(id);
+        }
+        public async Task<Category> CreateCategoryAsync(Category category)
+        {
+            _context.Categories.Add(category);
+            await _context.SaveChangesAsync();
+            return category;
         }
 
-        public Task<Category> GetCategoryByIdAsync(int id)
+        public async Task DeleteCategoryAsync(int id)
         {
-            throw new NotImplementedException();
+            var category = _context.Categories.Find(id);
+            if (category == null)
+            {
+                throw new KeyNotFoundException($"Category {id} not found.");
+            }
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
         }
 
-        public Task UpdateCategoryAsync(Category category)
+        public async Task UpdateCategoryAsync(Category category)
         {
-            throw new NotImplementedException();
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
         }
     }
 }
