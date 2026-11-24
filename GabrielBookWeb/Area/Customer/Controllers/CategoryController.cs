@@ -5,8 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client.NativeInterop;
 using GabrielBook.Business.Services.IServices;
 
-namespace GabrielBookWeb.Controllers
+namespace GabrielBookWeb.Area.Customer.Controllers
 {
+    [Area("Customer")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

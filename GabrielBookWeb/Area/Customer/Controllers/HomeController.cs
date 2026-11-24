@@ -2,8 +2,9 @@ using GabrielBook.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace GabrielBookWeb.Controllers
+namespace GabrielBookWeb.Area.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         public IActionResult Index()
