@@ -12,5 +12,7 @@ namespace GabrielBook.Business.Services.IServices
         Task<Category> CreateCategoryAsync(Category category);
         Task DeleteCategoryAsync(int id);
         Task UpdateCategoryAsync(Category category);
+
+        Task<bool> IsCategoryNameUniqueAsync(string name, int? categoryId = null);
     }
 }

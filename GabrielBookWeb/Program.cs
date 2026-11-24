@@ -1,3 +1,5 @@
+using GabrielBook.Business.Services;
+using GabrielBook.Business.Services.IServices;
 using GabrielBookWeb.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
 });
+
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
