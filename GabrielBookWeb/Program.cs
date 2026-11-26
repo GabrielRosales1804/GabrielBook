@@ -12,7 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
 });
-
+// Add services to the container.
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
