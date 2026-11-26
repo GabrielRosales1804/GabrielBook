@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -61,6 +62,12 @@ namespace GabrielBook.Models
         [Range(1, 1000, ErrorMessage = "Price must be between 1 and 1000")]
         [Display(Name = "Price for 100+")]
         public decimal Price100 { get; set; }
+        /// <summary>
+        /// Gets or sets the identifier of the category.
+        /// </summary>
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
         /// <summary>
         /// Gets or sets the URL for the product image.
         /// </summary>
